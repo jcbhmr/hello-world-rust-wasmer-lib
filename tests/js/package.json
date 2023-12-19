@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@jcbhmr/hello-world-wasm-lib": "file:./package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  },
+  "workspaces": [
+    "./package"
+  ]
+}

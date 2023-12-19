@@ -1,0 +1,50 @@
+/// Add two numbers
+add: func(a: u32, b: u32) -> u32
+
+/// Greet a person by name.
+greet: func(name: string) -> string
+
+/// Say hello to multiple people.
+greet-many: func(people: list<string>) -> string
+
+/// A point coordinate structure with { x, y }
+record point {
+    x: float32,
+    y: float32
+}
+
+/// Calculate distance between two points
+distance-between: func(p1: point, p2: point) -> float32
+
+/// A line geometry to represent a line segment with starting and ending point
+record line-segment {
+    start: point,
+    end: point
+}
+
+/// A structure to represent a circle with center point and a radius
+record circle {
+    center: point,
+    radius: float32
+}
+
+/// Arbitary shape - represent a shape with n number of points using a list of points
+record multi-line{
+    points: list<point>,
+}
+
+/// Calculate the perimeter of a Circle using 2*π*r.
+perimeter-of-circle: func(c: circle) -> float32
+
+/// Calculate the area of a Circle using π*r*r.
+area-of-circle: func(c: circle) -> float32
+
+/// Calculate the length of the multi-line by iterating over all the points and adding the result
+multi-line-length: func(l: multi-line) -> float32
+
+resource calculator {
+    static new: func(initial-value: float32) -> calculator
+    current-value: func() -> float32
+    add: func(value: float32)
+    multiply: func(value: float32)
+}

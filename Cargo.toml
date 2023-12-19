@@ -1,0 +1,21 @@
+[package]
+name = "hello-world-wasm-lib"
+description = "https://github.com/jcbhmr/hello-world-wasm-lib"
+version = "0.3.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wai-bindgen-rust = "0.2.3"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[package.metadata.wasmer]
+namespace = "jcbhmr"
+abi = "none"
+bindings = { wai-version = "0.2.3", exports = "exports.wai" }
+
+[build]
+target = "wasm32-unknown-unknown"
