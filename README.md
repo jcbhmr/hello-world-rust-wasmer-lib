@@ -76,7 +76,7 @@ wasmer add jcbhmr/hello-world-wasmer-lib --pip
 
 <!-- prettier-ignore -->
 Imports (in order): [`fib`](fib.wai), [`io`](io.wai) \
-Exports: [`hello-world-wasm-lib`](hello-world-wasm-lib.wai)
+Exports: [`hello-world-wasmer-lib`](hello-world-wasmer-lib.wai)
 
 Here's an example of how you would import and use this package using Node.js:
 
