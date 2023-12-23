@@ -20,4 +20,4 @@ crate-type = ["cdylib", "rlib"]
 [package.metadata.wasmer]
 namespace = "jcbhmr"
 abi = "none"
-bindings = { wai-version = "0.2.3", imports = ["fib.wai", "io.wai"], exports = "hello-world-wasm-lib.wai" }
+bindings = { wai-version = "0.2.3", imports = ["fib.wai", "io.wai"], exports = "hello-world-wasmer-lib.wai" }

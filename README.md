@@ -82,7 +82,7 @@ Here's an example of how you would import and use this package using Node.js:
 
 ```js
 import { bindings } from "@jcbhmr/hello-world-wasmer-lib";
-import { Calculator } from "@jcbhmr/hello-world-wasmer-lib/src/bindings/hello_world_wasm_lib/hello_world_wasm_lib.js";
+import { Calculator } from "@jcbhmr/hello-world-wasmer-lib/src/bindings/hello_world_wasmer_lib/hello_world_wasmer_lib.js";
 import * as io from "./io.js";
 import * as fib from "./fib.js";
 const hello_world_wasmer_lib = await bindings.hello_world_wasmer_lib(fib, io);
