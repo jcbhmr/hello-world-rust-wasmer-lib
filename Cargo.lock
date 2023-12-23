@@ -35,8 +35,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello-world-wasm-lib"
-version = "1.1.1"
+name = "hello-world-wasmer-lib"
+version = "1.1.2"
 dependencies = [
  "wai-bindgen-rust",
 ]

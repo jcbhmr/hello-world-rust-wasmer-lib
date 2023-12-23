@@ -1,11 +1,11 @@
 [package]
-name = "hello-world-wasm-lib"
+name = "hello-world-wasmer-lib"
 description = "🟪 A Rust library compiled to WASM and distributed with Wasmer"
-version = "1.1.1"
+version = "1.1.2"
 edition = "2021"
-documentation = "https://github.com/jcbhmr/hello-world-wasm-lib#readme"
-homepage = "https://github.com/jcbhmr/hello-world-wasm-lib#readme"
-repository = "https://github.com/jcbhmr/hello-world-wasm-lib.git"
+documentation = "https://github.com/jcbhmr/hello-world-wasmer-lib#readme"
+homepage = "https://github.com/jcbhmr/hello-world-wasmer-lib#readme"
+repository = "https://github.com/jcbhmr/hello-world-wasmer-lib.git"
 license = "0BSD"
 publish = false
 
@@ -21,6 +21,3 @@ crate-type = ["cdylib", "rlib"]
 namespace = "jcbhmr"
 abi = "none"
 bindings = { wai-version = "0.2.3", imports = ["fib.wai", "io.wai"], exports = "hello-world-wasm-lib.wai" }
-
-[build]
-target = "wasm32-unknown-unknown"

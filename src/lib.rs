@@ -1,13 +1,13 @@
 wai_bindgen_rust::import!("fib.wai");
 wai_bindgen_rust::import!("io.wai");
-wai_bindgen_rust::export!("hello-world-wasm-lib.wai");
+wai_bindgen_rust::export!("hello-world-wasmer-lib.wai");
 
-use crate::hello_world_wasm_lib::*;
+use crate::hello_world_wasmer_lib::*;
 use std::sync::Mutex;
 use wai_bindgen_rust::Handle;
 
-pub struct HelloWorldWasmLib;
-impl hello_world_wasm_lib::HelloWorldWasmLib for HelloWorldWasmLib {
+pub struct HelloWorldWasmerLib;
+impl hello_world_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
     fn add(a: u32, b: u32) -> u32 {
         a + b
     }
@@ -19,7 +19,7 @@ impl hello_world_wasm_lib::HelloWorldWasmLib for HelloWorldWasmLib {
     fn greet_many(people: Vec<String>) -> String {
         match people.as_slice() {
             [] => "Hello!".to_string(),
-            [person] => HelloWorldWasmLib::greet(person.into()),
+            [person] => HelloWorldWasmerLib::greet(person.into()),
             [person_1, person_2] => format!("Hello {person_1} and {person_2}!"),
             [people @ .., last] => {
                 let people = people.join(", ");
@@ -51,7 +51,7 @@ impl hello_world_wasm_lib::HelloWorldWasmLib for HelloWorldWasmLib {
         for i in 1..l.points.len() {
             let p1 = l.points[i - 1];
             let p2 = l.points[i];
-            result += HelloWorldWasmLib::distance_between(p1, p2);
+            result += HelloWorldWasmerLib::distance_between(p1, p2);
         }
         result
     }
@@ -87,7 +87,7 @@ impl hello_world_wasm_lib::HelloWorldWasmLib for HelloWorldWasmLib {
 }
 
 pub struct Calculator(Mutex<f32>);
-impl hello_world_wasm_lib::Calculator for Calculator {
+impl hello_world_wasmer_lib::Calculator for Calculator {
     fn new(initial_value: f32) -> Handle<Calculator> {
         Handle::new(Calculator(Mutex::new(initial_value)))
     }
