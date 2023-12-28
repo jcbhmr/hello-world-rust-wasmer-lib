@@ -2,12 +2,12 @@ wai_bindgen_rust::import!("fib.wai");
 wai_bindgen_rust::import!("io.wai");
 wai_bindgen_rust::export!("hello-world-rust-wasmer-lib.wai");
 
-use crate::hello_world_rust_wasmer_lib::*;
+use crate::hello_world_rust_wasmer_lib::HelloWorldRustWasmerLib;
 use std::sync::Mutex;
 use wai_bindgen_rust::Handle;
 
 pub struct HelloWorldWasmerLib;
-impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
+impl hello_world_rust_wasmer_lib::HelloWorldRustWasmerLib for HelloWorldWasmerLib {
     fn add(a: u32, b: u32) -> u32 {
         a + b
     }
@@ -51,7 +51,7 @@ impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
         for i in 1..l.points.len() {
             let p1 = l.points[i - 1];
             let p2 = l.points[i];
-            result += HelloWorldWasmerLib::distance_between(p1, p2);
+            result += HelloWorldRustWasmerLib::distance_between(p1, p2);
         }
         result
     }
