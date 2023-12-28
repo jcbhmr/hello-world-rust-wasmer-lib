@@ -1,16 +1,16 @@
-# "Hello world!" Wasmer library
+# "Hello world!" Rust Wasmer library
 
 🟪 A Rust library compiled to WASM for use with Wasmer
 
 <table align=center><td>
 
 ```js
-console.log(hello_world_wasmer_lib.add(1, 2));
+console.log(hello_world_rust_wasmer_lib.add(1, 2));
 //=> 3
-console.log(hello_world_wasmer_lib.greet("Alan Turing"));
+console.log(hello_world_rust_wasmer_lib.greet("Alan Turing"));
 //=> 'Hello Alan Turing!'
 
-const calc = Calculator.new(hello_world_wasmer_lib, 15);
+const calc = Calculator.new(hello_world_rust_wasmer_lib, 15);
 calc.add(5);
 console.log(calc.currentValue());
 //=> 20
@@ -19,12 +19,12 @@ console.log(calc.currentValue());
 <tr><td>
 
 ```py
-print(hello_world_wasmer_lib.add(1, 2))
+print(hello_world_rust_wasmer_lib.add(1, 2))
 #=> 3
-print(hello_world_wasmer_lib.greet("Alan Turing"))
+print(hello_world_rust_wasmer_lib.greet("Alan Turing"))
 #=> 'Hello Alan Turing!'
 
-calc = Calculator.new(hello_world_wasmer_lib, 15)
+calc = Calculator.new(hello_world_rust_wasmer_lib, 15)
 calc.add(5)
 print(calc.current_value())
 #=> 20
@@ -52,7 +52,7 @@ You can install this package using npm through [Wasmer]'s npm redistribution CDN
 using the [Wasmer CLI].
 
 ```sh
-wasmer add jcbhmr/hello-world-wasmer-lib --npm
+wasmer add jcbhmr/hello-world-rust-wasmer-lib --npm
 ```
 
 You can also use `--yarn` or `--pnpm` to install the package using [Yarn] or
@@ -64,7 +64,7 @@ You can also use `--yarn` or `--pnpm` to install the package using [Yarn] or
 If you're using Python you can install it using pip:
 
 ```sh
-wasmer add jcbhmr/hello-world-wasmer-lib --pip
+wasmer add jcbhmr/hello-world-rust-wasmer-lib --pip
 ```
 
 ## Usage
@@ -76,23 +76,26 @@ wasmer add jcbhmr/hello-world-wasmer-lib --pip
 
 <!-- prettier-ignore -->
 Imports (in order): [`fib`](fib.wai), [`io`](io.wai) \
-Exports: [`hello-world-wasmer-lib`](hello-world-wasmer-lib.wai)
+Exports: [`hello-world-rust-wasmer-lib`](hello-world-rust-wasmer-lib.wai)
 
 Here's an example of how you would import and use this package using Node.js:
 
 ```js
-import { bindings } from "@jcbhmr/hello-world-wasmer-lib";
-import { Calculator } from "@jcbhmr/hello-world-wasmer-lib/src/bindings/hello_world_wasmer_lib/hello_world_wasmer_lib.js";
+import { bindings } from "@jcbhmr/hello-world-rust-wasmer-lib";
+import { Calculator } from "@jcbhmr/hello-world-rust-wasmer-lib/src/bindings/hello_world_rust_wasmer_lib/hello_world_rust_wasmer_lib.js";
 import * as io from "./io.js";
 import * as fib from "./fib.js";
-const hello_world_wasmer_lib = await bindings.hello_world_wasmer_lib(fib, io);
+const hello_world_rust_wasmer_lib = await bindings.hello_world_rust_wasmer_lib(
+  fib,
+  io
+);
 
-console.log(hello_world_wasmer_lib.add(1, 2));
+console.log(hello_world_rust_wasmer_lib.add(1, 2));
 //=> 3
-console.log(hello_world_wasmer_lib.greet("Alan Turing"));
+console.log(hello_world_rust_wasmer_lib.greet("Alan Turing"));
 //=> 'Hello Alan Turing!'
 
-const calc = Calculator.new(hello_world_wasmer_lib, 15);
+const calc = Calculator.new(hello_world_rust_wasmer_lib, 15);
 calc.add(5);
 console.log(calc.currentValue());
 //=> 20
@@ -105,18 +108,18 @@ it the `exports` bindings context.
 To use this package with Python this is what you would do:
 
 ```py
-from hello_world_wasmer_lib import bindings
-from hello_world_wasmer_lib.bindings.hello_world_wasmer_lib import Calculator
+from hello_world_rust_wasmer_lib import bindings
+from hello_world_rust_wasmer_lib.bindings.hello_world_rust_wasmer_lib import Calculator
 import .fib
 import .io
-hello_world_wasmer_lib = bindings.hello_world_wasmer_lib(fib, io)
+hello_world_rust_wasmer_lib = bindings.hello_world_rust_wasmer_lib(fib, io)
 
-print(hello_world_wasmer_lib.add(1, 2))
+print(hello_world_rust_wasmer_lib.add(1, 2))
 #=> 3
-print(hello_world_wasmer_lib.greet("Alan Turing"))
+print(hello_world_rust_wasmer_lib.greet("Alan Turing"))
 #=> 'Hello Alan Turing!'
 
-calc = Calculator.new(hello_world_wasmer_lib, 15)
+calc = Calculator.new(hello_world_rust_wasmer_lib, 15)
 calc.add(5)
 print(calc.current_value())
 #=> 20
@@ -146,6 +149,6 @@ install [cargo-wasmer] via `cargo install cargo-wasmer`.
 [yarn]: https://yarnpkg.com/
 [pnpm]: https://pnpm.io/
 [the wasmer-pack CLI]: https://github.com/wasmerio/wasmer-pack
-[0bsd licensed]: https://github.com/jcbhmr/hello-world-wasmer-lib/blob/main/LICENSE
+[0bsd licensed]: https://github.com/jcbhmr/hello-world-rust-wasmer-lib/blob/main/LICENSE
 [wasmer pack tutorial series]: https://wasmerio.github.io/wasmer-pack/user-docs/tutorial/01-hello-world.html
 <!-- prettier-ignore-end -->

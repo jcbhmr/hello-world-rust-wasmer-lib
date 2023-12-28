@@ -1,13 +1,13 @@
 wai_bindgen_rust::import!("fib.wai");
 wai_bindgen_rust::import!("io.wai");
-wai_bindgen_rust::export!("hello-world-wasmer-lib.wai");
+wai_bindgen_rust::export!("hello-world-rust-wasmer-lib.wai");
 
-use crate::hello_world_wasmer_lib::*;
+use crate::hello_world_rust_wasmer_lib::*;
 use std::sync::Mutex;
 use wai_bindgen_rust::Handle;
 
 pub struct HelloWorldWasmerLib;
-impl hello_world_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
+impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
     fn add(a: u32, b: u32) -> u32 {
         a + b
     }
@@ -87,7 +87,7 @@ impl hello_world_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
 }
 
 pub struct Calculator(Mutex<f32>);
-impl hello_world_wasmer_lib::Calculator for Calculator {
+impl hello_world_rust_wasmer_lib::Calculator for Calculator {
     fn new(initial_value: f32) -> Handle<Calculator> {
         Handle::new(Calculator(Mutex::new(initial_value)))
     }
