@@ -1,7 +1,7 @@
 [package]
 name = "hello-world-rust-wasmer-lib"
 description = "🟪 A Rust library compiled to WASM and distributed with Wasmer"
-version = "1.2.0"
+version = "1.2.1"
 edition = "2021"
 documentation = "https://github.com/jcbhmr/hello-world-rust-wasmer-lib#readme"
 homepage = "https://github.com/jcbhmr/hello-world-rust-wasmer-lib#readme"
@@ -20,4 +20,7 @@ crate-type = ["cdylib", "rlib"]
 [package.metadata.wasmer]
 namespace = "jcbhmr"
 abi = "none"
-bindings = { wai-version = "0.2.3", imports = ["fib.wai", "io.wai"], exports = "hello-world-rust-wasmer-lib.wai" }
+bindings = { wai-version = "0.2.3", imports = [
+  "fib.wai",
+  "io.wai",
+], exports = "hello-world-rust-wasmer-lib.wai" }
