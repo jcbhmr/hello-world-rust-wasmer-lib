@@ -87,7 +87,7 @@ import * as io from "./io.js";
 import * as fib from "./fib.js";
 const hello_world_rust_wasmer_lib = await bindings.hello_world_rust_wasmer_lib(
   fib,
-  io
+  io,
 );
 
 console.log(hello_world_rust_wasmer_lib.add(1, 2));
