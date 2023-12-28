@@ -6,8 +6,8 @@ use crate::hello_world_rust_wasmer_lib::*;
 use std::sync::Mutex;
 use wai_bindgen_rust::Handle;
 
-pub struct HelloWorldWasmerLib;
-impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
+pub struct HelloWorldRustWasmerLib;
+impl hello_world_rust_wasmer_lib::HelloWorldRustWasmerLib for HelloWorldRustWasmerLib {
     fn add(a: u32, b: u32) -> u32 {
         a + b
     }
@@ -19,7 +19,7 @@ impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
     fn greet_many(people: Vec<String>) -> String {
         match people.as_slice() {
             [] => "Hello!".to_string(),
-            [person] => HelloWorldWasmerLib::greet(person.into()),
+            [person] => HelloWorldRustWasmerLib::greet(person.into()),
             [person_1, person_2] => format!("Hello {person_1} and {person_2}!"),
             [people @ .., last] => {
                 let people = people.join(", ");
@@ -51,7 +51,7 @@ impl hello_world_rust_wasmer_lib::HelloWorldWasmerLib for HelloWorldWasmerLib {
         for i in 1..l.points.len() {
             let p1 = l.points[i - 1];
             let p2 = l.points[i];
-            result += HelloWorldWasmerLib::distance_between(p1, p2);
+            result += HelloWorldRustWasmerLib::distance_between(p1, p2);
         }
         result
     }
