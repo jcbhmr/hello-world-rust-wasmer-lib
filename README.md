@@ -38,7 +38,7 @@ print(calc.current_value())
 📥 Imports some host functions \
 🟨 Can be used with JavaScript \
 🐍 Can be used with Python \
-👩‍⚖️ [0BSD licensed] template
+👩‍⚖️ [0BSD licensed](./LICENSE) template
 
 ## Installation
 
@@ -149,6 +149,5 @@ install [cargo-wasmer] via `cargo install cargo-wasmer`.
 [yarn]: https://yarnpkg.com/
 [pnpm]: https://pnpm.io/
 [the wasmer-pack CLI]: https://github.com/wasmerio/wasmer-pack
-[0bsd licensed]: https://github.com/jcbhmr/hello-world-rust-wasmer-lib/blob/main/LICENSE
 [wasmer pack tutorial series]: https://wasmerio.github.io/wasmer-pack/user-docs/tutorial/01-hello-world.html
 <!-- prettier-ignore-end -->
